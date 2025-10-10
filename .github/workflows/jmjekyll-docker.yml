@@ -1,0 +1,56 @@
+/.jekyll-cache
+/_config.yml
+/_posts
+/_layouts
+/_includes
+index.md
+name: Jekyll site CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+            - name: Autometrics Report
+  # You may pin to the exact commit or the version.
+  # uses: autometrics-dev/diff-metrics@778b3281f8446790af0afd766d5bb236defb5dde
+  uses: autometrics-dev/diff-metrics@v2.1.0
+  with:
+    # Github token to use
+    gh-token: 
+    # The list of rust project roots to check. One path per line
+    rs-roots: # optional
+    # The list of typescript project roots to check. One path per line
+    ts-roots: # optional
+    # The list of golang project roots to check. One path per line
+    go-roots: # optional
+    # The list of python project roots to check. One path per line
+    py-roots: # optional
+    # The number of days to keep the artifacts for. Defaults to 0 (inherits the policy from the repository)
+    retention-days: # optional, default is 0
+                - name: AI Reviewer
+  # You may pin to the exact commit or the version.
+  # uses: JensAstrup/ai-reviewer@e18234f8549f31e98059ac32850ad6a59878a0b8
+  uses: JensAstrup/ai-reviewer@v1.0.2
+  with:
+    # API key for OpenAI
+    OPENAI_API_KEY: 
+    # Token for GitHub
+    GITHUB_TOKEN: 
+          
+    # The version of am to download, skip patch or minor to act as a wildcard. "0.2" means ">=0.2.0 && <0.3.0", "1" means ">=1.0.0 && <2.0.0", etc.
+    am-version: # optional
+          
