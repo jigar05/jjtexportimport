@@ -17,7 +17,7 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Hello! I am learning web development and this is my first GitHub Pages site.</p>
+        <p>Hello Welcome to JM EXIM.</p>
         <button id="changeColorBtn">Change Background Color</button>
     </section>
 
@@ -88,5 +88,203 @@
     });
   });
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JM Export Import - Modern Export Website</title>
+<style>
+/* --- Reset & Base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { scroll-behavior: smooth; color: #333; line-height: 1.6; background: #f7f7f7; }
+
+/* --- Navbar --- */
+nav {
+  background: linear-gradient(90deg, #004080, #0066cc);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+nav a {
+  color: #fff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+nav a:hover { background: #ffcc00; color: #004080; }
+
+/* --- Hero Section --- */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1581091215368-c1d5049f8c7d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.hero h1 { font-size: 3em; margin-bottom: 20px; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); }
+.hero p { font-size: 1.5em; margin-bottom: 30px; max-width: 700px; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+.hero a { padding: 14px 36px; background: linear-gradient(45deg,#ffcc00,#ff9900); color: #004080; font-weight: bold; border-radius: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+.hero a:hover { transform: scale(1.05); }
+
+/* --- Sections --- */
+section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.6s;
+}
+section.active { opacity: 1; transform: translateY(0); }
+
+section:nth-child(even) { background: #f2f2f2; border-radius: 15px; margin-bottom: 50px; }
+h2 { color: #004080; margin-bottom: 40px; font-size: 2.5em; text-align: center; position: relative; }
+h2::after { content: ""; width: 80px; height: 3px; background: #ffcc00; display: block; margin: 10px auto 0; border-radius: 2px; }
+
+/* --- Paragraphs & Lists --- */
+p { font-size: 1.15em; max-width: 800px; margin: 0 auto 20px; text-align: center; }
+ul { list-style-type: square; max-width: 600px; margin: 0 auto; padding-left: 20px; }
+li { margin-bottom: 12px; font-size: 1.15em; transition: 0.3s; }
+li:hover { color: #004080; transform: scale(1.05); }
+
+/* --- Contact Card --- */
+.contact-card {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+  background: linear-gradient(135deg,#004080,#0066cc);
+  color: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: 0.4s;
+}
+.contact-card:hover { transform: translateY(-5px); }
+
+/* --- Buttons inside Contact --- */
+.contact-card a { color: #ffcc00; text-decoration: none; font-weight: bold; transition: 0.3s; }
+.contact-card a:hover { text-decoration: underline; }
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #222;
+  color: #fff;
+}
+footer a { color: #ffcc00; text-decoration: none; }
+
+/* --- Animations --- */
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  nav { flex-direction: column; }
+  nav a { margin: 10px 0; }
+  .hero h1 { font-size: 2.2em; }
+  .hero p { font-size: 1.2em; }
+  section { padding: 70px 15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>JM Export Import</h1>
+  <p>Global Cargo & Logistics Solutions. Delivering trust and reliability worldwide.</p>
+  <a href="#contact">Get in Touch</a>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>JM Export Import is a trusted export-import company in Ahmedabad, Gujarat. 
+  We specialize in international trade, customs clearance, and secure shipping solutions. 
+  Our goal is to provide seamless services to businesses globally with transparency and reliability.</p>
+</section>
+
+<!-- Products Section -->
+<section id="products">
+  <h2>Our Products</h2>
+  <ul>
+    <li>Medical Equipment</li>
+    <li>Spices and Agro Commodities</li>
+    <li>Electrical Junction Boxes</li>
+    <li>Eco-friendly Packaging Solutions</li>
+  </ul>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>International Cargo & Freight Forwarding</li>
+    <li>Customs Clearance Assistance</li>
+    <li>Export-Import Documentation</li>
+    <li>Global Logistics & Supply Chain Consulting</li>
+  </ul>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-card">
+    <p>📍 Ahmedabad, Gujarat, India</p>
+    <p>📧 Email: <a href="mailto:jmexportimport@gmail.com">jmexportimport@gmail.com</a></p>
+    <p>📞 Phone: +91-XXXXXXXXXX</p>
+    <p>🌐 Website: <a href="https://jigar05.github.io/jm-export-import/" target="_blank">JM Export Import</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 JM Export Import | Professional Export & Cargo Services
+</footer>
+
+<!-- Smooth scroll & Section animation JS -->
+<script>
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Animate sections when scrolling
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    sections.forEach(sec => {
+      if(scrollY + window.innerHeight > sec.offsetTop + 100){
+        sec.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+
 
 
