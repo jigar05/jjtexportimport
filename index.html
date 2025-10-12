@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>JM EXPORT IMPORT PVT LTD</h1>
         <nav>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
@@ -32,4 +32,61 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+</html><!-- About Section -->
+<section id="about" style="padding:60px 20px; background:#f8f9fa;">
+  <h2>About Us</h2>
+  <p>JM Export Import is a trusted name in global cargo and logistics. 
+  We specialize in international trade, customs clearance, and cargo management 
+  for both export and import shipments worldwide. Based in Ahmedabad, Gujarat, 
+  we ensure reliable delivery and transparent service for all our clients.</p>
+</section>
+
+<!-- Products Section -->
+<section id="products" style="padding:60px 20px;">
+  <h2>Products</h2>
+  <ul>
+    <li>Medical Equipment</li>
+    <li>Spices and Agro Commodities</li>
+    <li>Electrical Junction Boxes</li>
+    <li>Eco-friendly Packaging Solutions</li>
+  </ul>
+</section>
+
+<!-- Services Section -->
+<section id="services" style="padding:60px 20px; background:#f8f9fa;">
+  <h2>Services</h2>
+  <ul>
+    <li>International Cargo & Freight Forwarding</li>
+    <li>Customs Clearance Assistance</li>
+    <li>Export-Import Documentation</li>
+    <li>Global Logistics & Supply Chain Consulting</li>
+  </ul>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" style="padding:60px 20px;">
+  <h2>Contact Us</h2>
+  <p>📍 Ahmedabad, Gujarat, India</p>
+  <p>📧 Email: <a href="mailto:jmexportimport@gmail.com">jmexportimport@gmail.com</a></p>
+  <p>📞 Phone: +91-XXXXXXXXXX</p>
+  <p>🌐 Website: <a href="https://jigar05.github.io/jm-export-import/" target="_blank">JM Export Import</a></p>
+</section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+<script>
+  // Smooth scroll for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+
