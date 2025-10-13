@@ -301,6 +301,837 @@ footer a { color: #ffcc00; text-decoration: none; }
         </div>
     </div>
 </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>JM EXPORT IMPORT PVT LTD</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <button= Change Background colour</button>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello Welcome to JM EXIM.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: example@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html><!-- About Section -->
+<section id="about" style="padding:60px 20px; background:#f8f9fa;">
+  <h2>About Us</h2>
+  <p>JM Export Import is a trusted name in global cargo and logistics. 
+  We specialize in international trade, customs clearance, and cargo management 
+  for both export and import shipments worldwide. Based in Ahmedabad, Gujarat, 
+  we ensure reliable delivery and transparent service for all our clients.</p>
+</section>
+
+<!-- Products Section -->
+<section id="products" style="padding:60px 20px;">
+  <h2>Products</h2>
+  <ul>
+    <li>Medical Equipment</li>
+    <li>Spices and Agro Commodities</li>
+    <li>Electrical Junction Boxes</li>
+    <li>Eco-friendly Packaging Solutions</li>
+  </ul>
+</section>
+
+<!-- Services Section -->
+<section id="services" style="padding:60px 20px; background:#f8f9fa;">
+  <h2>Services</h2>
+  <ul>
+    <li>International Cargo & Freight Forwarding</li>
+    <li>Customs Clearance Assistance</li>
+    <li>Export-Import Documentation</li>
+    <li>Global Logistics & Supply Chain Consulting</li>
+  </ul>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" style="padding:60px 20px;">
+  <h2>Contact Us</h2>
+  <p>📍 Ahmedabad, Gujarat, India</p>
+  <p>📧 Email: <a href="mailto:jmexportimport@gmail.com">jmexportimport@gmail.com</a></p>
+  <p>📞 Phone: +91-XXXXXXXXXX</p>
+  <p>🌐 Website: <a href="https://jigar05.github.io/jm-export-import/" target="_blank">JM Export Import</a></p>
+</section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+<script>
+  // Smooth scroll for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JM Export Import - Modern Export Website</title>
+<style>
+/* --- Reset & Base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { scroll-behavior: smooth; color: #333; line-height: 1.6; background: #f7f7f7; }
+
+/* --- Navbar --- */
+nav {
+  background: linear-gradient(90deg, #004080, #0066cc);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+nav a {
+  color: #fff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+nav a:hover { background: #ffcc00; color: #004080; }
+
+/* --- Hero Section --- */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1581091215368-c1d5049f8c7d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.hero h1 { font-size: 3em; margin-bottom: 20px; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); }
+.hero p { font-size: 1.5em; margin-bottom: 30px; max-width: 700px; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+.hero a { padding: 14px 36px; background: linear-gradient(45deg,#ffcc00,#ff9900); color: #004080; font-weight: bold; border-radius: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+.hero a:hover { transform: scale(1.05); }
+
+/* --- Sections --- */
+section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.6s;
+}
+section.active { opacity: 1; transform: translateY(0); }
+
+section:nth-child(even) { background: #f2f2f2; border-radius: 15px; margin-bottom: 50px; }
+h2 { color: #004080; margin-bottom: 40px; font-size: 2.5em; text-align: center; position: relative; }
+h2::after { content: ""; width: 80px; height: 3px; background: #ffcc00; display: block; margin: 10px auto 0; border-radius: 2px; }
+
+/* --- Paragraphs & Lists --- */
+p { font-size: 1.15em; max-width: 800px; margin: 0 auto 20px; text-align: center; }
+ul { list-style-type: square; max-width: 600px; margin: 0 auto; padding-left: 20px; }
+li { margin-bottom: 12px; font-size: 1.15em; transition: 0.3s; }
+li:hover { color: #004080; transform: scale(1.05); }
+
+/* --- Contact Card --- */
+.contact-card {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+  background: linear-gradient(135deg,#004080,#0066cc);
+  color: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: 0.4s;
+}
+.contact-card:hover { transform: translateY(-5px); }
+
+/* --- Buttons inside Contact --- */
+.contact-card a { color: #ffcc00; text-decoration: none; font-weight: bold; transition: 0.3s; }
+.contact-card a:hover { text-decoration: underline; }
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #222;
+  color: #fff;
+}
+footer a { color: #ffcc00; text-decoration: none; }
+
+/* --- Animations --- */
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  nav { flex-direction: column; }
+  nav a { margin: 10px 0; }
+  .hero h1 { font-size: 2.2em; }
+  .hero p { font-size: 1.2em; }
+  section { padding: 70px 15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>JM Export Import</h1>
+  <p>Global Cargo & Logistics Solutions. Delivering trust and reliability worldwide.</p>
+  <a href="#contact">Get in Touch</a>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>JM Export Import is a trusted export-import company in Ahmedabad, Gujarat. 
+  We specialize in international trade, customs clearance, and secure shipping solutions. 
+  Our goal is to provide seamless services to businesses globally with transparency and reliability.</p>
+</section>
+
+<!-- Products Section -->
+<section id="products">
+  <h2>Our Products</h2>
+  <ul>
+    <li>Medical Equipment</li>
+    <li>Spices and Agro Commodities</li>
+    <li>Electrical Junction Boxes</li>
+    <li>Eco-friendly Packaging Solutions</li>
+  </ul>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>International Cargo & Freight Forwarding</li>
+    <li>Customs Clearance Assistance</li>
+    <li>Export-Import Documentation</li>
+    <li>Global Logistics & Supply Chain Consulting</li>
+  </ul>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-card">
+    <p>📍 Ahmedabad, Gujarat, India</p>
+    <p>📧 Email: <a href="mailto:jmexportimport@gmail.com">jmexportimport@gmail.com</a></p>
+    <p>📞 Phone: +91-XXXXXXXXXX</p>
+    <p>🌐 Website: <a href="https://jigar05.github.io/jm-export-import/" target="_blank">JM Export Import</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 JM Export Import | Professional Export & Cargo Services
+</footer>
+
+<!-- Smooth scroll & Section animation JS -->
+<script>
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Animate sections when scrolling
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    sections.forEach(sec => {
+      if(scrollY + window.innerHeight > sec.offsetTop + 100){
+        sec.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+<link rel="stylesheet" href="style.css">
+<section id="services">
+    <h2>Our Products & Services</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" alt="Product Image">
+            <div class="card-content">
+                <h3>Spices Export</h3>
+                <p>High-quality spices sourced directly from India.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" alt="Product Image">
+            <div class="card-content">
+                <h3>Medical Equipment</h3>
+                <p>Reliable surgical and medical equipment for export.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>JM EXPORT IMPORT PVT LTD</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <button= Change Background colour</button>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello Welcome to JM EXIM.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: example@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html><!-- About Section -->
+<section id="about" style="padding:60px 20px; background:#f8f9fa;">
+  <h2>About Us</h2>
+  <p>JM Export Import is a trusted name in global cargo and logistics. 
+  We specialize in international trade, customs clearance, and cargo management 
+  for both export and import shipments worldwide. Based in Ahmedabad, Gujarat, 
+  we ensure reliable delivery and transparent service for all our clients.</p>
+</section>
+
+<!-- Products Section -->
+<section id="products" style="padding:60px 20px;">
+  <h2>Products</h2>
+  <ul>
+    <li>Medical Equipment</li>
+    <li>Spices and Agro Commodities</li>
+    <li>Electrical Junction Boxes</li>
+    <li>Eco-friendly Packaging Solutions</li>
+  </ul>
+</section>
+
+<!-- Services Section -->
+<section id="services" style="padding:60px 20px; background:#f8f9fa;">
+  <h2>Services</h2>
+  <ul>
+    <li>International Cargo & Freight Forwarding</li>
+    <li>Customs Clearance Assistance</li>
+    <li>Export-Import Documentation</li>
+    <li>Global Logistics & Supply Chain Consulting</li>
+  </ul>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" style="padding:60px 20px;">
+  <h2>Contact Us</h2>
+  <p>📍 Ahmedabad, Gujarat, India</p>
+  <p>📧 Email: <a href="mailto:jmexportimport@gmail.com">jmexportimport@gmail.com</a></p>
+  <p>📞 Phone: +91-XXXXXXXXXX</p>
+  <p>🌐 Website: <a href="https://jigar05.github.io/jm-export-import/" target="_blank">JM Export Import</a></p>
+</section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+<script>
+  // Smooth scroll for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JM Export Import - Modern Export Website</title>
+<style>
+/* --- Reset & Base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { scroll-behavior: smooth; color: #333; line-height: 1.6; background: #f7f7f7; }
+
+/* --- Navbar --- */
+nav {
+  background: linear-gradient(90deg, #004080, #0066cc);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+nav a {
+  color: #fff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+nav a:hover { background: #ffcc00; color: #004080; }
+
+/* --- Hero Section --- */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1581091215368-c1d5049f8c7d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.hero h1 { font-size: 3em; margin-bottom: 20px; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); }
+.hero p { font-size: 1.5em; margin-bottom: 30px; max-width: 700px; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+.hero a { padding: 14px 36px; background: linear-gradient(45deg,#ffcc00,#ff9900); color: #004080; font-weight: bold; border-radius: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+.hero a:hover { transform: scale(1.05); }
+
+/* --- Sections --- */
+section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.6s;
+}
+section.active { opacity: 1; transform: translateY(0); }
+
+section:nth-child(even) { background: #f2f2f2; border-radius: 15px; margin-bottom: 50px; }
+h2 { color: #004080; margin-bottom: 40px; font-size: 2.5em; text-align: center; position: relative; }
+h2::after { content: ""; width: 80px; height: 3px; background: #ffcc00; display: block; margin: 10px auto 0; border-radius: 2px; }
+
+/* --- Paragraphs & Lists --- */
+p { font-size: 1.15em; max-width: 800px; margin: 0 auto 20px; text-align: center; }
+ul { list-style-type: square; max-width: 600px; margin: 0 auto; padding-left: 20px; }
+li { margin-bottom: 12px; font-size: 1.15em; transition: 0.3s; }
+li:hover { color: #004080; transform: scale(1.05); }
+
+/* --- Contact Card --- */
+.contact-card {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+  background: linear-gradient(135deg,#004080,#0066cc);
+  color: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: 0.4s;
+}
+.contact-card:hover { transform: translateY(-5px); }
+
+/* --- Buttons inside Contact --- */
+.contact-card a { color: #ffcc00; text-decoration: none; font-weight: bold; transition: 0.3s; }
+.contact-card a:hover { text-decoration: underline; }
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #222;
+  color: #fff;
+}
+footer a { color: #ffcc00; text-decoration: none; }
+
+/* --- Animations --- */
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  nav { flex-direction: column; }
+  nav a { margin: 10px 0; }
+  .hero h1 { font-size: 2.2em; }
+  .hero p { font-size: 1.2em; }
+  section { padding: 70px 15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>JM Export Import</h1>
+  <p>Global Cargo & Logistics Solutions. Delivering trust and reliability worldwide.</p>
+  <a href="#contact">Get in Touch</a>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>JM Export Import is a trusted export-import company in Ahmedabad, Gujarat. 
+  We specialize in international trade, customs clearance, and secure shipping solutions. 
+  Our goal is to provide seamless services to businesses globally with transparency and reliability.</p>
+</section>
+
+<!-- Products Section -->
+<section id="products">
+  <h2>Our Products</h2>
+  <ul>
+    <li>Medical Equipment</li>
+    <li>Spices and Agro Commodities</li>
+    <li>Electrical Junction Boxes</li>
+    <li>Eco-friendly Packaging Solutions</li>
+  </ul>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>International Cargo & Freight Forwarding</li>
+    <li>Customs Clearance Assistance</li>
+    <li>Export-Import Documentation</li>
+    <li>Global Logistics & Supply Chain Consulting</li>
+  </ul>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-card">
+    <p>📍 Ahmedabad, Gujarat, India</p>
+    <p>📧 Email: <a href="mailto:jmexportimport@gmail.com">jmexportimport@gmail.com</a></p>
+    <p>📞 Phone: +91-XXXXXXXXXX</p>
+    <p>🌐 Website: <a href="https://jigar05.github.io/jm-export-import/" target="_blank">JM Export Import</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 JM Export Import | Professional Export & Cargo Services
+</footer>
+
+<!-- Smooth scroll & Section animation JS -->
+<script>
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Animate sections when scrolling
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    sections.forEach(sec => {
+      if(scrollY + window.innerHeight > sec.offsetTop + 100){
+        sec.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+<link rel="stylesheet" href="style.css">
+<section id="services">
+    <h2>Our Products & Services</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" alt="Product Image">
+            <div class="card-content">
+                <h3>Spices Export</h3>
+                <p>High-quality spices sourced directly from India.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" alt="Product Image">
+            <div class="card-content">
+                <h3>Medical Equipment</h3>
+                <p>Reliable surgical and medical equipment for export.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JM Export Import - Professional</title>
+  <meta name="description" content="JM Export Import - Global Cargo & Logistics Solutions" />
+  <style>
+    /* ---------- Base & Reset ---------- */
+    :root{
+      --bg-start: #f3f6fb;
+      --bg-end: #e9f0fb;
+      --card: #ffffffdd;
+      --primary: #0b5ea8; /* deep blue */
+      --accent: #ffb400;  /* warm accent */
+      --muted: #6b7280;
+      --glass: rgba(255,255,255,0.6);
+      --radius: 12px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg,var(--bg-start),var(--bg-end));
+      color:#1f2d3d;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      scroll-behavior:smooth;
+    }
+
+    /* ---------- Layout ---------- */
+    .site-wrap{max-width:1200px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:10px;
+      background:linear-gradient(135deg,var(--primary),#0780d2);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+      box-shadow:0 6px 18px rgba(3,48,88,0.12)
+    }
+    .brand h1{font-size:1.05rem;color:var(--primary);letter-spacing:0.6px}
+
+    nav {
+      display:flex;gap:14px;align-items:center;
+    }
+    nav a{
+      color:var(--primary);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;
+      transition:all .18s ease;
+    }
+    nav a:hover{background:var(--glass);transform:translateY(-2px);box-shadow:0 6px 14px rgba(11,94,168,0.08)}
+
+    .cta{
+      background:linear-gradient(90deg,var(--accent),#ff9a00);
+      color:#07365a;padding:10px 14px;border-radius:999px;font-weight:700;text-decoration:none;
+      box-shadow:0 8px 20px rgba(255,180,60,0.12);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero{
+      margin-top:18px;margin-bottom:28px;border-radius:16px;overflow:hidden;
+      background:linear-gradient(180deg, rgba(3,53,99,0.9), rgba(3,53,99,0.65)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+      color:white;padding:64px 28px;display:flex;flex-direction:row;gap:40px;align-items:center;
+      box-shadow:0 20px 50px rgba(3,37,75,0.18);
+    }
+    .hero .hero-left{flex:1}
+    .hero h2{font-size:2.4rem;margin-bottom:12px;line-height:1.05}
+    .hero p{max-width:720px;color:#e6f2ff;font-size:1.05rem;margin-bottom:20px}
+    .hero .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.18);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-solid{background:var(--accent);color:#07365a;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* ---------- Sections (cards on subtle background) ---------- */
+    section{margin:28px 0;padding:34px;border-radius:var(--radius);background:var(--card);box-shadow:0 8px 30px rgba(11,35,60,0.06)}
+    section h3{color:var(--primary);font-size:1.5rem;margin-bottom:12px}
+    .section-row{display:flex;gap:24px;align-items:flex-start}
+    .col{flex:1}
+
+    /* Products grid */
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .product{
+      background:linear-gradient(180deg,#fff,#fbfdff);
+      border-radius:10px;padding:18px;display:flex;gap:12px;align-items:center;border:1px solid rgba(11,94,168,0.06)
+    }
+    .product img{width:100px;height:64px;object-fit:cover;border-radius:8px;flex-shrink:0}
+    .product h4{margin-bottom:6px;color:#062b45}
+    .product p{color:var(--muted);font-size:.95rem}
+
+    /* Contact card */
+    .contact-card{max-width:720px;margin:0 auto;padding:28px;border-radius:14px;background:linear-gradient(135deg,#f6fbff,#ffffff);border:1px solid rgba(3,53,99,0.04);display:flex;flex-direction:column;gap:8px}
+    .contact-card a{color:var(--primary);font-weight:700;text-decoration:none}
+
+    footer{margin-top:18px;padding:20px;text-align:center;color:var(--muted);font-size:.95rem}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:900px){
+      .hero{flex-direction:column;text-align:center;padding:36px}
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column;gap:12px;align-items:flex-start}
+      nav{flex-wrap:wrap}
+    }
+
+    @media (max-width:480px){
+      .hero h2{font-size:1.6rem}
+      .brand h1{font-size:.95rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">JM</div>
+        <h1>JM Export Import</h1>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Get Quote</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <h2 id="hero-title">Global Cargo & Logistics — Reliable, Transparent, On-time</h2>
+          <p>We provide end-to-end export-import solutions including customs clearance, documentation and optimized logistics for businesses across the globe. Based in Ahmedabad, we combine local knowledge with global reach.</p>
+          <div class="hero-actions">
+            <a class="btn-solid" href="#contact">Contact Us</a>
+            <a class="btn-outline" href="#services">Our Services</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" aria-labelledby="about-title">
+        <h3 id="about-title">About Us</h3>
+        <p>JM Export Import is a trusted name in international trade and logistics. We handle cargo management, customs clearance and documentation for import/export shipments, delivering tailored solutions and reliable service to our clients.</p>
+      </section>
+
+      <section id="products" aria-labelledby="products-title">
+        <h3 id="products-title">Products</h3>
+        <div class="grid" aria-hidden="false">
+          <div class="product">
+            <img src="https://via.placeholder.com/280x180" alt="Medical Equipment" />
+            <div>
+              <h4>Medical Equipment</h4>
+              <p>High-quality surgical and medical devices for global shipment.</p>
+            </div>
+          </div>
+          <div class="product">
+            <img src="https://via.placeholder.com/280x180" alt="Spices and Agro" />
+            <div>
+              <h4>Spices & Agro Commodities</h4>
+              <p>Premium spices and agricultural products sourced and packed to export standards.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" aria-labelledby="services-title">
+        <h3 id="services-title">Services</h3>
+        <div class="section-row">
+          <div class="col">
+            <ul>
+              <li>International Cargo & Freight Forwarding</li>
+              <li>Customs Clearance Assistance</li>
+              <li>Export-Import Documentation</li>
+              <li>Global Logistics & Supply Chain Consulting</li>
+            </ul>
+          </div>
+          <div class="col">
+            <p style="color:var(--muted)">We tailor logistics plans to minimize lead times and costs, ensure compliance with customs regulations, and provide tracking and communication throughout the shipment lifecycle.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <h3 id="contact-title">Contact</h3>
+        <div class="contact-card">
+          <p>📍 Ahmedabad, Gujarat, India</p>
+          <p>📧 Email: <a href="mailto:jmexportimport@gmail.com">jmexportimport@gmail.com</a></p>
+          <p>📞 Phone: +91-XXXXXXXXXX</p>
+          <p>🌐 Website: <a href="https://jigar05.github.io/jm-export-import/" target="_blank" rel="noopener">JM Export Import</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 JM Export Import • Professional Export & Cargo Services
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const target = this.getAttribute('href');
+        if (target && target.startsWith('#')) {
+          e.preventDefault();
+          const el = document.querySelector(target);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
