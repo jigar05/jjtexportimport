@@ -187,3 +187,34 @@ body{
 }
 
 /* Footer
+/* Design tokens */
+:root{
+  /* Colors */
+  --bg: #0f1724;            /* deep midnight */
+  --surface: #0b1220;
+  --muted: #9aa4b2;
+  --text: #e6eef8;
+  --accent: #3b82f6;        /* blue-500 */
+  --accent-600: #2563eb;
+  --success: #10b981;
+  --glass: rgba(255,255,255,0.04);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --lead-size: 1.125rem;
+  --h1-size: 2.25rem;
+  --base-size: 16px;
+
+  /* Layout */
+  --container: 1100px;
+  --radius: 12px;
+  --card-radius: 14px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --shadow-elev: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+/* Basic
+
