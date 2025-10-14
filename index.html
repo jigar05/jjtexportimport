@@ -293,3 +293,472 @@
   </script>
 </body>
 </html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JM Export Import - Professional Export & Logistics</title>
+  <meta name="description" content="JM Export Import - Global Cargo & Logistics Solutions" />
+  <meta name="author" content="JM Export Import" />
+  <style>
+    /* ---------- Variables & Reset ---------- */
+    :root{
+      --bg: #ffffff;                 /* explicit white background */
+      --page-max: 1200px;
+      --nav-bg: linear-gradient(90deg,#043a71,#0766b8);
+      --primary: #043a71;            /* deep navy */
+      --accent: #ffb400;             /* warm gold */
+      --muted: #6b7280;
+      --card: #ffffff;
+      --radius: 12px;
+      --glass: rgba(255,255,255,0.7);
+      --widget-bg: linear-gradient(135deg,#07365a,#0766b8);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: #102030;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ---------- Layout ---------- */
+    .site{max-width:var(--page-max);margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(10,20,40,0.04);
+    }
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0;max-width:var(--page-max);margin:0 auto}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:48px;height:48px;border-radius:10px;
+      background:linear-gradient(135deg,var(--primary),#0766b8);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+      box-shadow:0 6px 18px rgba(3,48,88,0.12);
+      font-size:18px;
+    }
+    .brand h1{font-size:1rem;color:var(--primary);letter-spacing:0.4px}
+
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{
+      color:var(--primary);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;
+      transition:all .18s ease;
+      font-size:0.95rem;
+    }
+    nav a:focus, nav a:hover{background:var(--glass);transform:translateY(-2px);box-shadow:0 6px 14px rgba(11,94,168,0.06)}
+    .cta{
+      background:linear-gradient(90deg,var(--accent),#ff9a00);
+      color:#07365a;padding:10px 14px;border-radius:999px;font-weight:700;text-decoration:none;
+      box-shadow:0 8px 20px rgba(255,180,60,0.12);
+      font-size:0.95rem;
+    }
+
+    /* ---------- Hero (full cover) ---------- */
+    .hero{
+      width:100%;
+      min-height:100vh; /* full viewport height on desktop */
+      display:flex;
+      align-items:center;
+      border-radius:0;
+      position:relative;
+      overflow:hidden;
+      margin-bottom:28px;
+      background:
+        linear-gradient(180deg, rgba(4,58,113,0.75), rgba(4,58,113,0.6)),
+        url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+      color:#fff;
+      padding:48px 20px;
+    }
+    .hero .site{display:flex;align-items:center}
+    .hero-inner{display:flex;gap:40px;align-items:center;justify-content:space-between;width:100%}
+    .hero-left{max-width:720px}
+    .hero h2{font-size:2.6rem;line-height:1.02;margin-bottom:12px}
+    .hero p{font-size:1.05rem;max-width:720px;color:#e6f2ff;margin-bottom:18px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.18);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-solid{background:var(--accent);color:#07365a;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* ---------- Sections (cards) ---------- */
+    section{max-width:var(--page-max);margin:28px auto;padding:36px;border-radius:var(--radius);background:var(--card);box-shadow:0 6px 26px rgba(10,20,40,0.04)}
+    section h2{color:var(--primary);margin-bottom:18px;font-size:1.6rem;text-align:center}
+    .lead{color:var(--muted);text-align:center;max-width:900px;margin:0 auto 22px}
+
+    /* Products grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product{display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(11,94,168,0.04);align-items:flex-start}
+    .product img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .product h3{font-size:1.05rem;color:#062b45;margin:0}
+    .product p{color:var(--muted);font-size:0.95rem}
+
+    /* Services list */
+    .services{display:flex;flex-direction:column;gap:12px;max-width:980px;margin:0 auto}
+    .service{display:flex;gap:12px;align-items:flex-start}
+    .service .icon{width:44px;height:44;border-radius:10px;background:linear-gradient(135deg,var(--primary),#0780d2);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    .service h4{margin:0;font-size:1rem;color:var(--primary)}
+    .service p{margin:0;color:var(--muted);font-size:0.95rem}
+
+    /* Contact card */
+    .contact-card{max-width:760px;margin:0 auto;padding:22px;border-radius:12px;background:linear-gradient(135deg,#fbfdff,#ffffff);border:1px solid rgba(3,53,99,0.04);display:flex;flex-direction:column;gap:8px}
+    .contact-card a{color:var(--primary);font-weight:700;text-decoration:none}
+
+    /* Footer */
+    footer{text-align:center;padding:20px 8px;color:var(--muted);font-size:0.95rem}
+
+    /* ---------- Animation & Interaction ---------- */
+    .reveal{opacity:0;transform:translateY(18px);transition:all .6s ease}
+    .reveal.active{opacity:1;transform:none}
+    a.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden} /* accessibility */
+
+    /* ---------- Freight Estimator Widget ---------- */
+    .estimator-toggle{
+      position:fixed;right:20px;bottom:24px;z-index:120;
+      width:64px;height:64px;border-radius:20px;
+      display:flex;align-items:center;justify-content:center;cursor:pointer;
+      color:white;font-weight:700;box-shadow:0 10px 30px rgba(3,48,88,0.22);
+      background:var(--widget-bg);border:0;outline:none;
+      transition:transform .18s ease,box-shadow .18s ease;
+    }
+    .estimator-toggle:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(3,48,88,0.28)}
+    .estimator-panel{
+      position:fixed;right:20px;bottom:100px;z-index:120;width:340px;padding:18px;border-radius:14px;
+      background:linear-gradient(180deg,#ffffff,#fbfdff);box-shadow:0 30px 60px rgba(6,34,64,0.18);border:1px solid rgba(7,56,96,0.06);
+      transform-origin:bottom right;opacity:0;visibility:hidden;transition:all .28s cubic-bezier(.2,.9,.2,1);
+    }
+    .estimator-panel.open{opacity:1;visibility:visible;transform:translateY(0)}
+    .estimator-panel header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .estimator-panel h3{margin:0;font-size:1.05rem;color:var(--primary)}
+    .estimator-row{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+    .estimator-row label{font-size:0.82rem;color:var(--muted);min-width:80px}
+    .estimator-row input[type=number], .estimator-row select{flex:1;padding:8px 10px;border-radius:8px;border:1px solid rgba(7,56,96,0.06);font-size:0.95rem}
+    .estimate-result{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(90deg,#07365a10,#0766b810);color:var(--primary);font-weight:700;text-align:center}
+    .estimate-btn{width:100%;margin-top:10px;padding:10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#ff9a00);border:0;color:#07365a;font-weight:800;cursor:pointer}
+    .small-muted{font-size:0.85rem;color:var(--muted);text-align:center;margin-top:8px}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:1100px){ .grid{grid-template-columns:repeat(2,1fr)} .estimator-panel{right:16px;left:16px;width:auto;bottom:100px} }
+    @media (max-width:760px){
+      .hero{padding:28px 14px;min-height:60vh}
+      .hero h2{font-size:1.8rem}
+      .hero p{font-size:1rem}
+      .grid{grid-template-columns:1fr}
+      nav{display:none} /* simple mobile: hide nav; you can add hamburger later */
+      .header-inner{padding:12px}
+      .brand h1{font-size:0.95rem}
+      .estimator-panel{right:12px;left:12px;width:auto;bottom:90px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header aria-label="Main header">
+    <div class="header-inner">
+      <div class="brand" aria-hidden="false">
+        <div class="logo" aria-hidden="true">JM</div>
+        <div>
+          <h1>JM Export Import</h1>
+          <div style="font-size:0.85rem;color:var(--muted)">Global Cargo & Logistics</div>
+        </div>
+      </div>
+
+      <nav role="navigation" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-hidden="false">
+    <div class="site hero-inner">
+      <div class="hero-left">
+        <h2>Trusted Export & Import Solutions — From Ahmedabad to the World</h2>
+        <p>We provide end-to-end freight forwarding, customs clearance and supply chain consultancy for medical equipment, spices, electrical goods and sustainable packaging solutions.</p>
+        <div class="hero-actions">
+          <a class="btn-solid" href="#contact">Contact Us</a>
+          <a class="btn-outline" href="#services">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-right" style="min-width:260px;max-width:360px;">
+        <!-- small promo card -->
+        <div style="background:linear-gradient(180deg,#ffffff10,#ffffff05);border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(6px)">
+          <strong style="display:block;font-size:1.05rem">Fast Customs Clearance</strong>
+          <p style="color:#e6f2ff;margin-top:8px;font-size:0.95rem">Personalized documentation and tracking for every shipment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" tabindex="-1">
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <h2>About Us</h2>
+      <p class="lead">JM Export Import is a trusted export-import company based in Ahmedabad, Gujarat. We specialize in international trade facilitation, customs clearance and secure shipping solutions tailored for small and large businesses.</p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="reveal" aria-labelledby="products-heading">
+      <h2 id="products-heading">Products</h2>
+      <div class="grid" role="list">
+        <article class="product" role="listitem">
+          <img src="https://via.placeholder.com/640x360?text=Medical+Equipment" alt="Medical equipment">
+          <h3>Medical Equipment</h3>
+          <p>Reliable surgical and diagnostic equipment sourced with compliant export documentation.</p>
+        </article>
+
+        <article class="product" role="listitem">
+          <img src="https://via.placeholder.com/640x360?text=Spices" alt="Spices and agro commodities">
+          <h3>Spices & Agro Commodities</h3>
+          <p>High-quality spices and food commodities packaged for export with traceability.</p>
+        </article>
+
+        <article class="product" role="listitem">
+          <img src="https://via.placeholder.com/640x360?text=Electrical+Boxes" alt="Electrical junction boxes">
+          <h3>Electrical Junction Boxes</h3>
+          <p>Industrial-grade electrical components and junction boxes for export markets.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="reveal">
+      <h2>Services</h2>
+      <div class="services">
+        <div class="service">
+          <div class="icon">F</div>
+          <div>
+            <h4>Freight Forwarding</h4>
+            <p>Sea, air and multimodal transport solutions tailored to your timelines and budget.</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="icon">C</div>
+          <div>
+            <h4>Customs Clearance</h4>
+            <p>Expert assistance with duties, HS codes and documentation to avoid delays.</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="icon">D</div>
+          <div>
+            <h4>Documentation & Compliance</h4>
+            <p>End-to-end handling of export/import paperwork, certificates and compliance checks.</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="icon">S</div>
+          <div>
+            <h4>Supply Chain Consulting</h4>
+            <p>Optimizations, route planning and partner selection for resilient international logistics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <h2>Contact Us</h2>
+      <div class="contact-card" role="region" aria-label="Contact information">
+        <p>📍 Ahmedabad, Gujarat, India</p>
+        <p>📧 Email: <a href="mailto:jmexportimport@gmail.com">jmexportimport@gmail.com</a></p>
+        <p>📞 Phone: +91-XXXXXXXXXX</p>
+        <p>🌐 Website: <a href="https://jigar05.github.io/jm-export-import/" target="_blank" rel="noopener">jigar05.github.io/jm-export-import</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="max-width:var(--page-max);margin:0 auto;padding:12px 20px;color:var(--muted)">
+      &copy; 2025 JM Export Import — Professional Export & Cargo Services
+    </div>
+  </footer>
+
+  <!-- Freight Cost Estimator Widget -->
+  <button class="estimator-toggle" id="estimatorToggle" aria-expanded="false" aria-controls="estimatorPanel" title="Freight Estimator">
+    FE
+  </button>
+
+  <aside class="estimator-panel" id="estimatorPanel" aria-hidden="true" role="dialog" aria-label="Freight cost estimator">
+    <header>
+      <h3>Freight Cost Estimator</h3>
+      <button id="estClose" aria-label="Close estimator" style="background:transparent;border:0;color:var(--muted);cursor:pointer;font-weight:700">✕</button>
+    </header>
+
+    <div>
+      <div class="estimator-row">
+        <label for="weight">Weight (kg)</label>
+        <input id="weight" type="number" min="0" step="0.1" value="10">
+      </div>
+
+      <div class="estimator-row">
+        <label for="distance">Distance (km)</label>
+        <input id="distance" type="number" min="0" step="1" value="1000">
+      </div>
+
+      <div class="estimator-row">
+        <label for="mode">Mode</label>
+        <select id="mode" aria-label="Transport mode">
+          <option value="sea">Sea (economy)</option>
+          <option value="air">Air (fast)</option>
+          <option value="road">Road (regional)</option>
+        </select>
+      </div>
+
+      <div class="estimator-row">
+        <label for="urgency">Urgency</label>
+        <select id="urgency">
+          <option value="standard">Standard</option>
+          <option value="express">Express (+25%)</option>
+        </select>
+      </div>
+
+      <button class="estimate-btn" id="estimateBtn">Calculate Estimate</button>
+
+      <div class="estimate-result" id="estimateResult">Estimate will appear here</div>
+      <div class="small-muted">This is an indicative estimate. For exact pricing, request a quote.</div>
+    </div>
+  </aside>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if(!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // update focus for accessibility
+        target.setAttribute('tabindex','-1');
+        target.focus({ preventScroll: true });
+      });
+    });
+
+    // Reveal sections when they enter viewport
+    const revealElements = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    revealElements.forEach(el => obs.observe(el));
+
+    // Estimator widget interactions
+    const estimatorToggle = document.getElementById('estimatorToggle');
+    const estimatorPanel = document.getElementById('estimatorPanel');
+    const estClose = document.getElementById('estClose');
+
+    function openEstimator() {
+      estimatorPanel.classList.add('open');
+      estimatorPanel.setAttribute('aria-hidden', 'false');
+      estimatorToggle.setAttribute('aria-expanded', 'true');
+      // focus first input for convenience
+      setTimeout(() => document.getElementById('weight').focus(), 120);
+    }
+
+    function closeEstimator() {
+      estimatorPanel.classList.remove('open');
+      estimatorPanel.setAttribute('aria-hidden', 'true');
+      estimatorToggle.setAttribute('aria-expanded', 'false');
+      estimatorToggle.focus();
+    }
+
+    estimatorToggle.addEventListener('click', () => {
+      const isOpen = estimatorPanel.classList.contains('open');
+      if (isOpen) closeEstimator(); else openEstimator();
+    });
+    estClose.addEventListener('click', closeEstimator);
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && estimatorPanel.classList.contains('open')) {
+        closeEstimator();
+      }
+    });
+
+    // Simple cost calculation logic
+    function calculateEstimate(weight, distance, mode, urgency) {
+      // base per km per kg rates by mode (indicative)
+      const ratePerKgPerKm = {
+        sea: 0.0006,  // economical: lower rate
+        air: 0.0035,  // expensive but fast
+        road: 0.0012  // medium
+      };
+      const baseRate = ratePerKgPerKm[mode] || 0.001;
+      const weightFactor = Math.max(0.1, weight); // avoid zero
+      const distanceFactor = Math.max(1, distance);
+      let estimate = weightFactor * distanceFactor * baseRate;
+      // add service/handling flat fee
+      const handling = 25; // flat currency units
+      estimate = estimate + handling;
+      // urgency multiplier
+      if (urgency === 'express') estimate *= 1.25;
+      // round and format
+      return Math.max(estimate, 0).toFixed(2);
+    }
+
+    const estimateBtn = document.getElementById('estimateBtn');
+    const estimateResult = document.getElementById('estimateResult');
+
+    estimateBtn.addEventListener('click', () => {
+      const weight = parseFloat(document.getElementById('weight').value) || 0;
+      const distance = parseFloat(document.getElementById('distance').value) || 0;
+      const mode = document.getElementById('mode').value;
+      const urgency = document.getElementById('urgency').value;
+
+      // basic validation
+      if (weight <= 0 || distance <= 0) {
+        estimateResult.textContent = 'Please enter valid weight and distance.';
+        return;
+      }
+
+      // animate counting up
+      const raw = calculateEstimate(weight, distance, mode, urgency);
+      const target = parseFloat(raw);
+      let current = 0;
+      const duration = 700;
+      const start = performance.now();
+
+      function step(ts) {
+        const elapsed = ts - start;
+        const progress = Math.min(elapsed / duration, 1);
+        current = (target * progress);
+        estimateResult.textContent = 'Estimated cost: ₹' + current.toFixed(2);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          // final
+          estimateResult.textContent = 'Estimated cost: ₹' + target.toFixed(2);
+        }
+      }
+      requestAnimationFrame(step);
+    });
+
+    // close estimator if clicked outside (for desktop)
+    document.addEventListener('click', (e) => {
+      const isClickInside = estimatorPanel.contains(e.target) || estimatorToggle.contains(e.target);
+      if (!isClickInside && estimatorPanel.classList.contains('open')) {
+        closeEstimator();
+      }
+    });
+  </script>
+</body>
+</html>
