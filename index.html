@@ -762,3 +762,270 @@
   </script>
 </body>
 </html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Single Feature — Product Landing</title>
+  <meta name="description" content="Single-feature product landing: intro, about, product & services, contact — all on one page. Minimal, accessible, responsive." />
+
+  <!-- Minimal CSS embedded so everything is singular and not repeated across files -->
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --text:#e6eef6;
+      --radius:12px; --maxw:980px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#071025 0%, #07111a 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    header{
+      position:sticky; top:12px; z-index:30;
+      display:flex; justify-content:center;
+      pointer-events:none;
+    }
+    .navwrap{
+      pointer-events:auto;
+      width:min(100%,var(--maxw)); display:flex; gap:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      padding:10px 14px; border-radius:999px; align-items:center;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6);
+    }
+    .brand{font-weight:600; color:var(--text); margin-right:auto; display:flex; gap:10px; align-items:center}
+    .brand .dot{width:10px; height:10px; background:var(--accent); border-radius:50%}
+    nav a{
+      color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px;
+      font-size:0.95rem;
+    }
+    nav a:hover, nav a[aria-current="true"]{color:var(--text); background:linear-gradient(90deg, rgba(6,182,212,0.08), rgba(99,102,241,0.04))}
+    main{max-width:var(--maxw); margin:36px auto; padding:18px; display:grid; gap:28px}
+    section.card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius); padding:22px; box-shadow:0 8px 30px rgba(2,6,23,0.55);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .hero{display:grid; grid-template-columns:1fr; gap:18px; align-items:center}
+    .hero .title{font-size:clamp(1.4rem,2.6vw,2.1rem); margin:0}
+    .hero .lead{color:var(--muted); margin:0; font-size:1rem}
+    .grid-2{display:grid; grid-template-columns:1fr 320px; gap:18px}
+    @media (max-width:880px){ .grid-2{grid-template-columns:1fr} header{top:8px} .navwrap{padding:10px} }
+    .feature-list{display:flex; flex-direction:column; gap:12px}
+    .feature{display:flex; gap:12px; align-items:flex-start}
+    .feature .icon{width:44px; height:44px; border-radius:10px; background:rgba(6,182,212,0.08); color:var(--accent); display:grid; place-items:center; font-weight:700}
+    .muted{color:var(--muted); font-size:0.95rem}
+    .card h2{margin:0 0 8px 0}
+    .contact-form{display:grid; gap:10px}
+    .input, textarea{
+      width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.03);
+      background:transparent; color:var(--text); font-size:0.95rem; resize:vertical;
+    }
+    .row{display:flex; gap:10px}
+    .btn{
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      background:linear-gradient(90deg, var(--accent), #6366f1); color:#001218; padding:10px 14px; border-radius:10px;
+      border:0; font-weight:700; cursor:pointer;
+    }
+    footer{max-width:var(--maxw); margin:0 auto 40px; text-align:center; color:var(--muted); font-size:0.9rem}
+    .small{font-size:0.9rem; color:var(--muted)}
+    /* focus styles */
+    a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(6,182,212,0.14); outline-offset:3px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navwrap" role="navigation" aria-label="Main">
+      <div class="brand" aria-hidden="true"><span class="dot"></span>SingleFeature</div>
+      <nav>
+        <a href="#intro" data-target="intro" aria-current="true">Intro</a>
+        <a href="#about" data-target="about">About</a>
+        <a href="#product" data-target="product">Product & Services</a>
+        <a href="#contact" data-target="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Intro: single, concise presentation -->
+    <section id="intro" class="card hero" aria-labelledby="intro-title">
+      <div>
+        <h1 id="intro-title" class="title">One Thing. One Page. Done.</h1>
+        <p class="lead">A focused page that presents a single feature — clear value, how it works, what you get, and how to reach us. No repetition, no clutter.</p>
+      </div>
+      <div class="grid-2" aria-hidden="false">
+        <div class="feature-list">
+          <div class="feature">
+            <div class="icon" aria-hidden="true">1</div>
+            <div>
+              <strong>Single Purpose</strong>
+              <div class="muted">Everything on this page is about the one feature we ship. No duplicate sections.</div>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon" aria-hidden="true">🚀</div>
+            <div>
+              <strong>Fast to Understand</strong>
+              <div class="muted">Straight to benefits and next steps so users convert faster.</div>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon" aria-hidden="true">🔒</div>
+            <div>
+              <strong>Lightweight</strong>
+              <div class="muted">Small HTML/CSS/JS footprint so the page loads quickly.</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card" style="padding:14px;">
+          <h3 style="margin:0 0 8px 0">Get started</h3>
+          <p class="muted" style="margin:0 0 12px 0">Try the feature free for 14 days. No credit card required.</p>
+          <button class="btn" id="cta-demo">Request Demo</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About: brief, unique -->
+    <section id="about" class="card" aria-labelledby="about-title">
+      <h2 id="about-title">About this feature</h2>
+      <p class="muted">This product solves the core job: make the selected task instant, reliable, and measurable. We focus on one problem so we can optimise the experience end-to-end instead of diluting value across many disconnected features.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:12px">
+        <div style="padding:12px; border-radius:10px; background:rgba(255,255,255,0.01)">
+          <strong>Why single-focus?</strong>
+          <p class="muted" style="margin:8px 0 0 0">Concentration leads to better performance, less UI, and clearer marketing.</p>
+        </div>
+        <div style="padding:12px; border-radius:10px; background:rgba(255,255,255,0.01)">
+          <strong>Who is it for?</strong>
+          <p class="muted" style="margin:8px 0 0 0">Teams or individuals who need a reliable, no-friction solution for one recurring task.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product & Services: single combined section -->
+    <section id="product" class="card" aria-labelledby="product-title">
+      <h2 id="product-title">Product & Services</h2>
+      <p class="muted">The product is the feature — polished UI, fast backend, and a small set of optional services to plug in if you need them.</p>
+
+      <div style="display:grid; gap:12px; margin-top:12px">
+        <div style="display:flex; gap:12px; align-items:flex-start">
+          <div style="width:56px; height:56px; border-radius:12px; background:rgba(99,102,241,0.08); display:grid; place-items:center; font-weight:700">P</div>
+          <div>
+            <strong>Core product</strong>
+            <div class="muted">The hosted app that does the single feature in under 5 clicks. Clean dashboard, exportable data, and APIs for automation.</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; align-items:flex-start">
+          <div style="width:56px; height:56px; border-radius:12px; background:rgba(6,182,212,0.06); display:grid; place-items:center; font-weight:700">S</div>
+          <div>
+            <strong>Optional services</strong>
+            <div class="muted">Setup assistance, priority support, and a small integration pack for teams who want faster ramp-up.</div>
+          </div>
+        </div>
+
+        <div style="margin-top:6px">
+          <strong>Pricing</strong>
+          <p class="muted" style="margin:6px 0 0 0">Simple tiers: Free (limited), Pro (full product), and Enterprise (adds services & SSO). Reach out for volume pricing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact: singular contact form and channels -->
+    <section id="contact" class="card" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="muted">Use the form below or email us directly at hello@singlefeature.example — we reply within one business day.</p>
+
+      <form id="contact-form" class="contact-form" aria-label="Contact form">
+        <label class="small">
+          Name
+          <input name="name" class="input" type="text" required placeholder="Your name" />
+        </label>
+        <label class="small">
+          Email
+          <input name="email" class="input" type="email" required placeholder="you@example.com" />
+        </label>
+        <label class="small">
+          Message
+          <textarea name="message" rows="4" class="input" required placeholder="Tell us what you'd like to achieve"></textarea>
+        </label>
+
+        <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end; margin-top:6px">
+          <button type="submit" class="btn">Send message</button>
+        </div>
+
+        <div id="form-status" class="small muted" role="status" aria-live="polite" style="margin-top:8px"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> SingleFeature — Minimal landing for one feature</div>
+  </footer>
+
+  <!-- Minimal JS embedded (single file) -->
+  <script>
+    // Small helpers: smooth scroll, form handling, dynamic year, navigation aria-current updates
+    (function(){
+      // set year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Smooth scroll & update aria-current
+      const links = Array.from(document.querySelectorAll('nav a'));
+      function setCurrent(id){
+        links.forEach(a => a.setAttribute('aria-current', a.getAttribute('data-target') === id ? 'true' : 'false'));
+      }
+      links.forEach(a=>{
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          const id = this.getAttribute('data-target');
+          const el = document.getElementById(id);
+          if(!el) return;
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+          setCurrent(id);
+          history.replaceState(null,'', '#'+id);
+        });
+      });
+
+      // Form submit: demo-only (no external calls) — keeps everything singular and local
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        status.textContent = 'Sending...';
+        const data = new FormData(form);
+        // simulate network
+        setTimeout(()=>{
+          status.textContent = 'Thanks — your message was received. We will reply to ' + (data.get('email') || 'you') + '.';
+          form.reset();
+        }, 900);
+      });
+
+      // CTA demo button scrolls to contact
+      document.getElementById('cta-demo').addEventListener('click', function(){
+        const c = document.getElementById('contact');
+        if(c){ c.scrollIntoView({behavior:'smooth', block:'start'}); setCurrent('contact'); }
+      });
+
+      // Update aria-current when scrolling (simple observer)
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+      const obs = new IntersectionObserver(entries=>{
+        entries.forEach(ent=>{
+          if(ent.isIntersecting){
+            setCurrent(ent.target.id);
+            history.replaceState(null,'', '#'+ent.target.id);
+          }
+        });
+      }, {root:null, threshold:0.5});
+      sections.forEach(s => obs.observe(s));
+    })();
+  </script>
+</body>
+</html>
