@@ -534,6 +534,33 @@ document.addEventListener('DOMContentLoaded', function(){
   const year = document.getElementById('year');
   if(year) year.textContent = new Date().getFullYear();
 });
+function removeDuplicates(data) {
+  const seen = new Set();
+  const deduped = {};
+
+  for (const key of Object.keys(data)) {
+    deduped[key] = data[key].filter(item => {
+      if (seen.has(item)) return false;
+      seen.add(item);
+      return true;
+    });
+  }
+
+  return deduped;
+}
+
+// Example usage:
+const input = {
+  into: ['login', 'signup', 'checkout'],
+  action: ['checkout', 'submit', 'login'],
+  contact: ['email', 'phone', 'submit'],
+  product: ['item1', 'item2', 'login'],
+  services: ['support', 'email', 'item1']
+};
+
+const cleaned = removeDuplicates(input);
+console.log(cleaned);
+
 
 
 
